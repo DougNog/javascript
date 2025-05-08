@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Pizzaria</title>
+  <link rel="stylesheet" href="Pizzaria_interface.css"> <!-- Vincula o CSS comentado anteriormente -->
+</head>
+<body>
+  <div class="container">
+
+    <!-- TÍTULO PRINCIPAL -->
+    <h1>Sistema de Pizzaria</h1>
+
+    <!-- MENU PRINCIPAL -->
+    <div class="menu">
+      <button onclick="mostrarCadastro()">
+        <span class="icon">📋</span> Cadastrar Pizza
+      </button>
+      <button onclick="mostrarCardapio()">
+        <span class="icon">🍕</span> Ver Cardápio
+      </button>
+      <button onclick="mostrarPedido()">
+        <span class="icon">🛒</span> Fazer Pedido
+      </button>
+    </div>
+
+    <!-- SEÇÃO DE CADASTRO DE PIZZAS -->
+    <div id="cadastro" class="hidden">
+      <h2>Cadastro de Pizza</h2>
+      <form id="form-cadastro">
+        <div class="form-group">
+          <label for="nome">Nome da Pizza:</label>
+          <input type="text" id="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Descrição:</label>
+          <input type="text" id="descricao" required>
+        </div>
+        <div class="form-group">
+          <label for="preco">Preço (R$):</label>
+          <input type="number" id="preco" step="0.01" required>
+        </div>
+        <button type="submit">Cadastrar</button>
+        <button type="button" class="voltar-menu" onclick="voltarMenu()">Voltar ao Menu</button>
+      </form>
+    </div>
+
+    <!-- SEÇÃO DE CARDÁPIO -->
+    <div id="cardapio" class="hidden">
+      <h2>Cardápio</h2>
+      <input type="text" id="busca-pizza" placeholder="Buscar pizza...">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-cardapio">
+          <!-- As pizzas serão listadas aqui via JavaScript -->
+        </tbody>
+      </table>
+      <button type="button" class="voltar-menu" onclick="voltarMenu()">Voltar ao Menu</button>
+    </div>
+
+    <!-- SEÇÃO DE PEDIDO -->
+    <div id="pedido" class="hidden">
+      <h2>Fazer Pedido</h2>
+      <div class="pedido-container">
+
+        <!-- Lista de pizzas disponíveis -->
+        <div class="lista-pizzas">
+          <h3>Pizzas Disponíveis</h3>
+          <div id="lista-pizzas">
+            <!-- Cada item de pizza será inserido aqui dinamicamente -->
+          </div>
+        </div>
+
+        <!-- Resumo do pedido -->
+        <div class="resumo-pedido">
+          <h3>Resumo do Pedido</h3>
+          <ul id="resumo-pedido">
+            <li class="vazio">Nenhuma pizza adicionada</li>
+          </ul>
+          <div class="total-pedido">
+            Total: <span id="total">R$ 0,00</span>
+          </div>
+
+          <!-- Dados do cliente -->
+          <div class="info-cliente">
+            <div class="form-group">
+              <label for="nome-cliente">Seu Nome:</label>
+              <input type="text" id="nome-cliente" required>
+            </div>
+            <div class="form-group">
+              <label for="endereco-cliente">Endereço:</label>
+              <input type="text" id="endereco-cliente" required>
+            </div>
+            <button class="btn-finalizar">Finalizar Pedido</button>
+            <button type="button" class="voltar-menu" onclick="voltarMenu()">Voltar ao Menu</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+<script src="Pizzaria_interface.js"></script> <!-- Vincula o JavaScript comentado anteriormente -->
+  </div>
+</body>
+</html>
