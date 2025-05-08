@@ -1,0 +1,55 @@
+<!--Crie um programa que solicite o modelo de um carro e exiba informações sobre o carro, como preço, ano de fabricação e tipo de combustível. Utilize um switch para diferentes modelos. Aresente ao final o relatório de realização de serviços, com o valor total dos serviços realizados.-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Carro</title>
+</head>
+<body>
+    <h1>Informações do Carro</h1>
+    <p>(oapla, peugeot ou marea turbo)</p>
+    <label for="modelo">Digite o modelo do carro:</label>
+    <input type="text" id="modelo">
+    <button onclick="informacoesCarro()">Ver informações</button>
+    <p id="result"></p>
+
+    <script>
+        function informacoesCarro() {
+            const modelo = document.getElementById('modelo').value.trim().toLowerCase();
+            let informacoes = 'Modelo não encontrado.';
+            let preco, ano, combustivel;
+
+            switch (modelo) {
+                case 'opala':
+                    preco = 60000;
+                    ano = 1980;
+                    combustivel = 'Petroleo puro';
+                    break;
+                case 'peugeot':
+                    preco = 2.50;
+                    ano = 1600;
+                    combustivel = 'Lagrimas';
+                    break;
+                case 'marea turbo':
+                    preco = 120000;
+                    ano = 2022;
+                    combustivel = 'Gasolina';
+                    break;
+                default:
+                    informacoes = 'Modelo não encontrado.';
+            }
+
+            if (preco) {
+                informacoes = `Modelo: ${modelo.charAt(0).toUpperCase() + modelo.slice(1)}<br>` +
+                              `Preço: R$ ${preco.toLocaleString('pt-BR')}<br>` +
+                              `Ano: ${ano}<br>` +
+                              `Combustível: ${combustivel}`;
+            }
+
+            document.getElementById('result').innerHTML = informacoes;
+        }
+    </script>
+</body>
+</html>

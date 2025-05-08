@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecânica do Zé</title>
+</head>
+<body>
+    <h1>Mecânica do Zé</h1>
+    <p>Escolha os serviços desejados:</p>
+    <label><input type="checkbox" class="servico" data-preco="100"> Troca de Óleo - R$100</label><br>
+    <label><input type="checkbox" class="servico" data-preco="80"> Alinhamento - R$80</label><br>
+    <label><input type="checkbox" class="servico" data-preco="50"> Balanceamento - R$50</label><br>
+    
+    <p>Nome do Cliente:</p>
+    <input type="text" id="nomeCliente">
+    <button onclick="finalizar()">Finalizar</button>
+    
+    <h2>Resumo do Serviço</h2>
+    <p><strong>Cliente:</strong> <span id="resumoNome"></span></p>
+    <p><strong>Serviços:</strong> <span id="resumoServicos"></span></p>
+    <p><strong>Total:</strong> R$<span id="resumoTotal">0</span></p>
+
+    <script>
+        function finalizar() {
+            // Obtém o nome do cliente
+            const nome = document.getElementById("nomeCliente").value.trim();
+            if (!nome) {
+                alert("Por favor, insira o nome do cliente.");
+                return;
+            }
+            const servicos = document.querySelectorAll(".servico:checked");
+            let listaServicos = "";
+            let total = 0;
+
+            servicos.forEach(function(servico) {
+                const descricao = servico.parentElement.textContent.trim();
+                const preco = parseFloat(servico.dataset.preco);
+                listaServicos += descricao + ", ";
+                total += preco;
+            });
+
+            
+           
+
+          
+            document.getElementById("resumoNome").textContent = nome;
+            document.getElementById("resumoServicos").textContent = listaServicos || "Nenhum serviço selecionado";
+            document.getElementById("resumoTotal").textContent = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

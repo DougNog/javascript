@@ -1,0 +1,47 @@
+<!--Crie um programa que solicite o tipo de roupa (camisa, calça, vestido) e exiba o preço correspondente. Utilize um switch para diferentes tipos de roupas. E ao final exiba o preço total com um desconto de 10% para compras acima de R$ 100,00.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Preço das Roupas</h1>
+    <label for="roupa">Digite o tipo de roupa (juliete, medusa, tênis feio):</label>
+    <input type="text" id="roupa">
+    <button onclick="precoRoupa()">Ver preço</button>
+    <p id="result"></p>
+
+    <script>
+        function precoRoupa() {
+            const mandrake = document.getElementById('roupa').value.trim().toLowerCase();
+            let preco = 0;
+            let desconto = 0;
+
+            switch (mandrake) {
+                case 'juliete':
+                    preco = 50;
+                    break;
+                case 'medusa':
+                    preco = 80;
+                    break;
+                case 'tênis feio':
+                    preco = 120;
+                    break;
+                default:
+                    alert('Tipo de roupa não encontrado.');
+                    return;
+            }
+
+            if (preco > 100) {
+                desconto = preco * 0.10; // 10% de desconto
+            }
+
+            const precoFinal = preco - desconto;
+            document.getElementById('result').innerText = `Preço final: R$ ${precoFinal.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

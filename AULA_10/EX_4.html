@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código do Produto</title>
+</head>
+<body>
+    Código do Produto: <input type="text" id="codigoProduto" value="PROD001"><br><br>
+    <button onclick="exibirProduto()">Exibir Produto</button>
+    <div id="resultadoProduto"></div>
+
+    <script>
+        function exibirProduto() {
+            let codigoProduto = document.getElementById("codigoProduto").value.toUpperCase();
+            let nomeProduto;
+            let precoProduto;
+            switch (codigo) {
+                case "PROD001":
+                    nomeProduto = "Notebook";
+                    precoProduto = 1200.00;
+                    break;
+                case "PROD002":
+                    nomeProduto = "Mouse";
+                    precoProduto = 25.00;
+                    break;
+                case "PROD003":
+                    nomeProduto = "Teclado";
+                    precoProduto = 75.00;
+                    break;
+                    case "PROD004":
+                    nomeProduto = "RTX-4050";
+                    precoProduto = 3500.00;
+                    break;
+                default:
+                    nomeProduto = "Produto não Encontrado";
+                    precoProduto = 0;
+
+                    document.getElementById("resultadoProduto").innerHTML = `Produto: <strong>${nomeProduto}</strong><br>Preço: <strong>${precoProduto.toFixed(2)}</strong>`;
+            }
+        }
+    </script>
+</body>
+</html>

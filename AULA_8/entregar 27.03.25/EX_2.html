@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estoque.css">
+    <title>Controle de Estoque</title>
+</head>
+<body>
+    <h1>Controle de Estoque</h1>
+    <input type="number" id="quantidade" placeholder="Digite a quantidade">
+    <button onclick="verificarEstoque()">Verificar Estoque</button>
+    <p id="mensagem"></p>
+    <script>
+        function verificarEstoque() {
+            const quantidade = +document.getElementById('quantidade').value || 0;
+            const mensagem = document.getElementById('mensagem');
+            mensagem.textContent = quantidade < 30 ? "Estoque Baixo" : 
+                                   quantidade > 100 ? "Estoque Bom" : 
+                                   "Estoque Regular";
+            mensagem.className = quantidade < 30 ? 'low-stock' : 
+                                 quantidade > 100 ? 'good-stock' : '';
+        }
+    </script>
+</body>
+</html>

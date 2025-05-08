@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Semáforo</title>
+    </style>
+</head>
+<body>
+    <div class="luz" id="luz"></div>
+    <p id="mensagem">Escolha uma opção</p>
+    <button onclick="mudarMensagem('Vermelho, Pare!')">Vermelho</button>
+    <button onclick="mudarMensagem('Laranja,Atenção!')">Laranja</button>
+    <button onclick="mudarMensagem('Verde, Siga!')">Verde</button>
+    <script>
+        function mudarMensagem(mensagem) {
+            document.getElementById("mensagem").textContent = mensagem;
+        }
+    </script>
+</body>
+</html>

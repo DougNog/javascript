@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="vetorMaiorMenor" placeholder="Digite os números separados por vírgula">;
+    <button onclick="encontrarMaior()">Maior</button>
+    <p id="resultadoMaiorMenor"></p>
+    <script>
+        function encontrarMaior(){
+            const vetor=document.getElementById("vetorMaiorMenor").value.split(",").map(Number)
+            let maior=vetor[0]
+            for(let i=1;i<vetor.length;i++){
+                if(vetor[i]>maior){
+                    maior=vetor[i]
+                }if(vetor[i]<menor){
+                    menor=vetor[i]
+                }
+            }
+            document.getElementById("resultadoMaiorMenor").innerHTML="O maior valor é: "+maior
+        }
+    </script>
+</body>
+</html>

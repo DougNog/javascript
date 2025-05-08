@@ -1,0 +1,73 @@
+<!--programa que calcule a área de um circulo, quadrado e triângulo. O usuario deve informar o tipo de figura e as dimensões necessárias. O programa deve exibir  área  calculada usando switch-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Área</title>
+</head>
+
+<body>
+  <h2>Escolha a figura:</h2>
+  <select id="figura" onchange="mostrarCampos()">
+    <option value="circulo">Círculo</option>
+    <option value="quadrado">Quadrado</option>
+    <option value="triangulo">Triângulo</option>
+  </select>
+
+  <div id="campos"></div>
+
+  <button onclick="calcularArea()">Calcular Área</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function mostrarCampos() {
+      const figura = document.getElementById("figura").value;
+      const campos = document.getElementById("campos");
+
+      switch (figura) {
+        case "circulo":
+          campos.innerHTML = 'Raio: <input id="raio">';
+          break;
+        case "quadrado":
+          campos.innerHTML = 'Lado: <input id="lado">';
+          break;
+        case "triangulo":
+          campos.innerHTML = 'Base: <input id="base"> Altura: <input id="altura">';
+          break;
+      }
+    }
+
+    function calcularArea() {
+      const figura = document.getElementById("figura").value;
+      let area = 0;
+
+      switch (figura) {
+        case "circulo":
+          const raio = parseFloat(document.getElementById("raio").value);
+          area = Math.PI * raio * raio;
+          break;
+
+        case "quadrado":
+          const lado = parseFloat(document.getElementById("lado").value);
+          area = lado * lado;
+          break;
+
+        case "triangulo":
+          const base = parseFloat(document.getElementById("base").value);
+          const altura = parseFloat(document.getElementById("altura").value);
+          area = (base * altura) / 2;
+          break;
+      }
+
+      document.getElementById("resultado").textContent = "Área: " + area.toFixed(2);
+    }
+
+    // Mostrar campos do círculo por padrão ao carregar a página
+    mostrarCampos();
+  </script>
+</body>
+
+</html>

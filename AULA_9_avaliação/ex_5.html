@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+</head>
+<body>
+    <h1>Reserva de Produtos</h1>
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="text" id="produto" placeholder="Produto">
+    <input type="number" id="quantidade" placeholder="Quantidade" min="1">
+    <button onclick="reservar()">Reservar</button>
+    <p id="resumo"></p>
+    <script>
+        function reservar() {
+            let nome = document.getElementById("nome").value;
+            let produto = document.getElementById("produto").value;
+            let quantidade = document.getElementById("quantidade").value;
+            if (!nome || !produto || !quantidade) return alert("Preencha todos os campos!");
+            document.getElementById("resumo").textContent = `Cliente: ${nome}, Produto: ${produto}, Quantidade: ${quantidade}`;
+        }
+    </script>
+</body>
+</html>

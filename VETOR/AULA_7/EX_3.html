@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 3</title>
+</head>
+<body>
+    <input type="text" id="vetorInversao" placeholder="Digite os numeros separados por espaço">
+    <button onclick="inverterVetorTela()">Inverter Vetor</button>
+    <ip id="resultadoInversao"></ip>
+
+    <script>
+        function inverterVetorTela(){
+            const vetor = document.getElementById('vetorInversao').value.split(" ").map(Number);
+            document.getElementById('resultadoInversao').innerHTML = "Vetor Invertido: " + vetor.reverse();
+        }
+    </script>
+</body>
+</html>

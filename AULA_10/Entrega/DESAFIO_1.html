@@ -1,0 +1,48 @@
+<!--programa que converta um valor em reais para dolares e euros o usuario deve indformar o valor em reais e as taxas de cambio atuais. o programa deve exibir o valor convertido em dolares e euros usando switch-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Moedas</title>
+</head>
+
+<body>
+  <h1>Conversor de Moedas</h1>
+  <label for="valor">Valor em Reais:</label>
+  <input id="valor" type="number" placeholder="Digite o valor em reais">
+  <label for="moeda">Converter para:</label>
+  <select id="moeda">
+    <option value="">Escolha uma moeda</option>
+    <option value="dolar">Dólar</option>
+    <option value="euro">Euro</option>
+  </select>
+  <button onclick="vidaCap()">Converter</button>
+  <p id="res"></p>
+
+  <script>
+    function vidaCap() {
+      const valor = parseFloat(document.getElementById("valor").value);
+      const moeda = document.getElementById("moeda").value;
+      let resultado = 0;
+
+      switch (moeda) {
+        case "dolar":
+          const taxaDolar = 0.20; // Taxa de câmbio para dólar
+          resultado = valor * taxaDolar;
+          break;
+        case "euro":
+          const taxaEuro = 0.17; // Taxa de câmbio para euro
+          resultado = valor * taxaEuro;
+          break;
+        default:
+      }
+
+      document.getElementById("res").textContent = `Valor convertido: ${resultado.toFixed(2)} ${moeda === "dolar" ? "USD" : "EUR"}`;
+    }
+  </script>
+</body>
+
+</html>

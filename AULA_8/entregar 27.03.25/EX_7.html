@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorveteria - Promoção</title>
+</head>
+<body>
+    <h1>Sorveteria DERRETE TUDO</h1>
+    <p>Escolha o seu pedido:</p>
+    <button onclick="realizarPedido('casquinha')">Casquinha</button>
+    <button onclick="realizarPedido('picolé')">Picolé</button>
+    <p id="resultado"></p>
+    <script>
+        function realizarPedido(tipo) {
+            const resultado = document.getElementById('resultado');
+            if (tipo === 'casquinha') {
+                resultado.textContent = "Você ganhou outra casquinha grátis!";
+            } else if (tipo === 'picolé') {
+                resultado.textContent = "Você ganhou um cupom de desconto para a próxima compra!";
+            } else {
+                resultado.textContent = "Pedido inválido.";
+            }
+        }
+    </script>
+</body>
+</html>

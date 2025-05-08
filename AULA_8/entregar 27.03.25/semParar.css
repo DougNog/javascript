@@ -1,0 +1,44 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+/* Estilo do título */
+h1 {
+    color: #333;
+    font-size: 2em;
+}
+
+/* Estilo do input */
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    margin: 10px 0;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo do resultado */
+p#resultado {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}

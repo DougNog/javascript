@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Bom Sabor - Promoção</title>
+</head>
+<body>
+    <h1>Pizzaria Bom Sabor</h1>
+    <p>Escolha o tamanho das pizzas:</p>
+    <label>
+        <input type="checkbox" id="grande"> 2 Pizza Grande
+    </label>
+    <br>
+    <label>
+        <input type="checkbox" id="media"> Pizza Média
+    </label>
+    <br>
+    <label>
+        <input type="checkbox" id="pequena"> Pizza Pequena
+    </label>
+    <br><br>
+    <button onclick="verificarPromocao()">Verificar Promoção</button>
+    <p id="resultado"></p>
+    <script>
+        function verificarPromocao() {
+            const grande = document.getElementById('grande').checked;
+            const media = document.getElementById('media').checked;
+            const pequena = document.getElementById('pequena').checked;
+            const resultado = document.getElementById('resultado');
+
+            if (grande && grande) {
+                resultado.textContent = "Você ganhou um refrigerante de 2 litros!";
+            } else if (media && pequena) {
+                resultado.textContent = "Você ganhou uma porção de pão de alho!";
+            } else {
+                resultado.textContent = "Nenhuma promoção aplicada.";
+            }
+        }
+    </script>
+</body>
+</html>

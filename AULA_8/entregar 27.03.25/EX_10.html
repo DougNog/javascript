@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema CineShow - Preços</title>
+</head>
+<body>
+    <h1>Cinema CineShow</h1>
+    <p>Informe os dados do cliente:</p>
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" min="1" placeholder="Digite a idade">
+    <br><br>
+    <label>
+        <input type="checkbox" id="estudante"> É estudante com carteirinha
+    </label>
+    <br><br>
+    <button onclick="calcularIngresso()">Calcular Valor do Ingresso</button>
+    <p id="resultado"></p>
+    <script>
+        function calcularIngresso() {
+            const idade = parseInt(document.getElementById('idade').value);
+            const estudante = document.getElementById('estudante').checked;
+            const resultado = document.getElementById('resultado');
+
+            if (isNaN(idade) || idade <= 0) {
+                resultado.textContent = "Por favor, insira uma idade válida.";
+                return;
+            }
+
+            const meiaEntrada = idade <= 12 || idade >= 60 || estudante;
+            const valorIngresso = meiaEntrada ? "Meia entrada: R$ 10,00" : "Inteira: R$ 20,00";
+
+            resultado.textContent = `Valor do ingresso: ${valorIngresso}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="PIZZARIA.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/945/945711.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+    <title>Pizzaria Delícia</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>PIZZARIA DELÍCIA - A melhor pizza da cidade!</h1>
+        <div class="menu" id="menu-principal">
+            <button onclick="mostrarSecao('cadastro')">
+                <i class="fas fa-pizza-slice icon"></i>Cadastrar Pizza
+            </button>
+            <button onclick="mostrarSecao('cardapio')">
+                <i class="fas fa-list icon"></i>Ver Cardápio
+            </button>
+            <button onclick="mostrarSecao('alterar')">
+                <i class="fas fa-edit icon"></i>Alterar Pizza
+            </button>
+            <button onclick="mostrarSecao('pedidos')">
+                <i class="fas fa-shopping-cart icon"></i>Pedidos
+            </button>
+        </div>
+
+        <div id="cadastro" class="hidden">
+            <h2>Cadastrar Nova Pizza</h2>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Digite o nome da pizza" required />
+                <small class="error-message" id="nome-erro"></small>
+            </div>
+            <div class="form-group">
+                <label for="ingredientes">Ingredientes:</label>
+                <input type="text" id="ingredientes" placeholder="Digite os ingredientes (separados por vírgula)"
+                    required />
+                <small class="error-message" id="ingredientes-erro"></small>
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço:</label>
+                <input type="number" id="preco" placeholder="Digite o preço da pizza" step="0.01" required />
+                <small class="error-message" id="preco-erro"></small>
+            </div>
+            <button onclick="adicionarPizza()">Adicionar Pizza</button>
+            <div class="feedback-message" id="cadastro-feedback"></div>
+            <button class="voltar-menu" onclick="mostrarMenu()">Voltar ao Menu</button>
+        </div>
+
+        <div id="cardapio" class="hidden">
+            <h2>Nosso Cardápio</h2>
+            <input type="text" id="busca-pizza" placeholder="Buscar por nome" oninput="buscarPizza()" />
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ingredientes</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-pizzas">
+                </tbody>
+            </table>
+            <div class="feedback-message" id="cardapio-feedback"></div>
+            <button class="voltar-menu" onclick="mostrarMenu()">Voltar ao Menu</button>
+        </div>
+
+        <div id="alterar" class="hidden">
+            <h2>Alterar Pizza</h2>
+            <input type="text" id="busca-alterar-pizza" placeholder="Buscar por nome"
+                oninput="buscarPizzaParaAlterar()" />
+            <div id="form-alterar-pizza" class="hidden">
+                <div class="form-group">
+                    <label for="novo-nome">Novo Nome:</label>
+                    <input type="text" id="novo-nome" placeholder="Digite o novo nome" required />
+                    <small class="error-message" id="novo-nome-erro"></small>
+                </div>
+                <div class="form-group">
+                    <label for="novos-ingredientes">Novos Ingredientes:</label>
+                    <input type="text" id="novos-ingredientes" placeholder="Digite os novos ingredientes" required />
+                    <small class="error-message" id="novos-ingredientes-erro"></small>
+                </div>
+                <div class="form-group">
+                    <label for="novo-preco">Novo Preço:</label>
+                    <input type="number" id="novo-preco" placeholder="Digite o novo preço" step="0.01" required />
+                    <small class="error-message" id="novo-preco-erro"></small>
+                </div>
+                <button onclick="alterarPizza()">Salvar Alterações</button>
+                <div class="feedback-message" id="alterar-feedback"></div>
+            </div>
+            <div class="feedback-message" id="busca-alterar-feedback"></div>
+            <button class="voltar-menu" onclick="mostrarMenu()">Voltar ao Menu</button>
+        </div>
+
+        <div id="pedidos" class="hidden">
+            <h2>Fazer Pedido</h2>
+            <p>Esta seção pode ser implementada com mais detalhes para gerenciar pedidos.</p>
+            <button class="voltar-menu" onclick="mostrarMenu()">Voltar ao Menu</button>
+        </div>
+    </div>
+    <script src="PIZZARIA.js"></script>
+</body>
+
+</html>

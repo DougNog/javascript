@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Brinquedos</title>
+</head>
+<body>
+    <h1>Loja de Brinquedos</h1>
+    <input type="number" id="codigo" placeholder="Código do Produto">
+    <input type="number" id="preco" placeholder="Preço do Produto">
+    <button onclick="calcularPreco()">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+        function calcularPreco() {
+            const codigo = +document.getElementById('codigo').value;
+            const preco = +document.getElementById('preco').value;
+            const resultado = document.getElementById('resultado');
+            const precoFinal = (codigo === 1 || codigo === 10) ? preco * 1.1 : preco;
+            resultado.textContent = `Preço final: R$ ${precoFinal.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

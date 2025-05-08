@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "text" id="matrizDiagonal" placeholder="Digite 16 números separados por espaço (4x4)">
+    <button onclick="somarDiagonalPrincipalMatriz()">Somar Elementos</button>
+    <p id="resultadoSomaDiagonal"></p>
+
+    <script>
+        function somarDiagonalPrincipalMatriz() {
+            const vetor = document.getElementById("matrizDiagonal").value.split(" ").map(Number);
+            const matriz = [];
+            for (let i = 0; i < 4; i++) {
+                matriz[i] = vetor.slice(i * 4, (i + 1) * 4);
+            }
+            let soma = 0;
+            for (let i = 0; i < 4; i++) {
+                soma += matriz[i][i];
+            }
+            document.getElementById("resultadoSomaDiagonal").innerHTML = "Soma da diagonal Principal: " + soma;
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo da lista */
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin: 5px 0;
+}

@@ -1,0 +1,49 @@
+<!--programa que solicita uma nota de 0 a 10 e exiba a classificação (A, B, C, D ou F) usando switch-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de Notas</title>
+</head>
+
+<body>
+    <h1>Classificação de Notas</h1>
+    <label for="nota">Digite a nota (0 a 10):</label>
+    <input type="number" id="nota" min="0" max="10">
+    <button onclick="classificar()">Classificar</button>
+    <p id="result"></p>
+
+    <script>
+        function classificar() {
+            const nota = parseFloat(document.getElementById('nota').value);
+            let classificação = 'Nota inválida!';
+
+            switch (true) {
+                case (nota >= 9 && nota <= 10):
+                    classificação = 'A';
+                    break;
+                case (nota >= 7 && nota < 9):
+                    classificação = 'B';
+                    break;
+                case (nota >= 5 && nota < 7):
+                    classificação = 'C';
+                    break;
+                case (nota >= 3 && nota < 5):
+                    classificação = 'D';
+                    break;
+                case (nota >= 0 && nota < 3):
+                    classificação = 'F';
+                    break;
+                default:
+                        
+            }
+
+            document.getElementById('result').innerText = `Classificação: ${classificação}`;
+        }
+    </script>
+</body>
+
+</html>

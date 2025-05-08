@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria Café Expresso</title>
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo à Cafeteria Café Expresso</h1>
+    <button onclick="cafeteria()">Fazer Pedido</button>
+    <div id="resultado"></div> <!-- Div para exibir o resultado -->
+    <script>
+        function cafeteria() {
+            // Exibe o menu para o cliente
+            let menu = "Bem-vindo à Cafeteria Café Expresso!\n";
+            menu += "Escolha uma das opções abaixo:\n";
+            menu += "1 - Café Expresso (R$ 5,00)\n";
+            menu += "2 - Cappuccino (R$ 8,00)\n";
+            menu += "3 - Chocolate Quente (R$ 7,50)\n";
+            menu += "4 - Chá (R$ 4,00)\n";
+
+            let opcao = parseInt(window.prompt(menu)); // Recebe a opção escolhida pelo cliente
+            let pedido = "";
+            let valor = 0;
+
+            // Verifica a opção escolhida
+            if (opcao === 1) {
+                pedido = "Café Expresso";
+                valor = 5.00;
+            } else if (opcao === 2) {
+                pedido = "Cappuccino";
+                valor = 8.00;
+            } else if (opcao === 3) {
+                pedido = "Chocolate Quente";
+                valor = 7.50;
+            } else if (opcao === 4) {
+                pedido = "Chá";
+                valor = 4.00;
+            } else {
+                document.getElementById("resultado").innerHTML = "<p>Opção inválida. Por favor, escolha uma opção válida.</p>";
+                return; // Encerra a função se a opção for inválida
+            }
+
+            // Exibe o pedido e o valor total no HTML
+            document.getElementById("resultado").innerHTML = `
+                <p>Você escolheu: <strong>${pedido}</strong></p>
+                <p>Valor total: <strong>R$ ${valor.toFixed(2)}</strong></p>
+            `;
+        }
+    </script>
+</body>
+</html>
