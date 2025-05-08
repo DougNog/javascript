@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
-
+<html lang="pt-BR">
 <head>
     <!-- Metadados e configurações básicas -->
-    <meta charset="UTF-8" /> <!-- Define o conjunto de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Torna a página responsiva em diferentes tamanhos de tela -->
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <!-- Estilos e fontes -->
-    <link rel="stylesheet" href="PIZZARIA.css" /> <!-- Importa o arquivo CSS externo com os estilos da página -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" /> <!-- Ícones da Font Awesome -->
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/945/945711.png" type="image/png" /> <!-- Define um ícone para a aba do navegador -->
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" /> <!-- Importa a fonte "Ubuntu" do Google Fonts -->
+    <link rel="stylesheet" href="PIZZARIA.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/945/945711.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
 
-    <title>Pizzaria do Bluzão</title> <!-- Título da página exibido na aba do navegador -->
+    <title>Pizzaria do Bluzão</title>
 </head>
 
 <body>
-    <!-- Conteúdo principal da página -->
-    <div class="container"> <!-- Div que envolve todo o conteúdo principal -->
+    <div class="container">
+        <!-- Cabeçalho principal -->
+        <h1>PIZZARIA DO BLUZÃO - A melhor pizza da cidade!</h1>
 
-        <!-- Cabeçalho -->
-        <h1>PIZZARIA DO BLUZÃO - A melhor pizza da cidade!</h1> <!-- Título principal -->
-
-        <!-- Menu de navegação -->
-        <div class="menu" id="menu-principal"> <!-- Menu com botões de navegação -->
+        <!-- Menu de navegação principal -->
+        <div class="menu" id="menu-principal">
             <button onclick="mostrarSecao('cadastro')">
-                <i class="fas fa-pizza-slice icon"></i>Cadastrar Pizza <!-- Ícone + texto -->
+                <i class="fas fa-pizza-slice icon"></i>Cadastrar Pizza
             </button>
             <button onclick="mostrarSecao('cardapio')">
                 <i class="fas fa-list icon"></i>Ver Cardápio
@@ -38,55 +35,50 @@
             </button>
         </div>
 
-        <!-- Seção para cadastro de novas pizzas -->
-        <div id="cadastro" class="hidden"> <!-- Oculto inicialmente -->
+        <!-- Seção de cadastro de novas pizzas -->
+        <div id="cadastro" class="hidden">
             <h2>Cadastrar Nova Pizza</h2>
             
-            <!-- Campo: Nome da pizza -->
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" placeholder="Digite o nome da pizza" required />
-                <small class="error-message" id="nome-erro"></small> <!-- Mensagem de erro -->
+                <small class="error-message" id="nome-erro"></small>
             </div>
 
-            <!-- Campo: Ingredientes -->
             <div class="form-group">
                 <label for="ingredientes">Ingredientes:</label>
                 <input type="text" id="ingredientes" placeholder="Digite os ingredientes (separados por vírgula)" required />
                 <small class="error-message" id="ingredientes-erro"></small>
             </div>
 
-            <!-- Campo: Preço -->
             <div class="form-group">
                 <label for="preco">Preço:</label>
                 <input type="number" id="preco" placeholder="Digite o preço da pizza" step="0.01" required />
                 <small class="error-message" id="preco-erro"></small>
             </div>
 
-            <button onclick="adicionarPizza()">Adicionar Pizza</button> <!-- Botão para adicionar pizza -->
-            <div class="feedback-message" id="cadastro-feedback"></div> <!-- Mensagem de confirmação ou erro -->
-            <button class="voltar-menu" onclick="mostrarMenu()">Voltar ao Menu</button> <!-- Voltar ao menu principal -->
+            <button onclick="adicionarPizza()">Adicionar Pizza</button>
+            <div class="feedback-message" id="cadastro-feedback"></div>
+            <button class="voltar-menu" onclick="mostrarMenu()">Voltar ao Menu</button>
         </div>
 
         <!-- Seção do cardápio -->
-        <div id="cardapio" class="hidden"> <!-- Oculto inicialmente -->
+        <div id="cardapio" class="hidden">
             <h2>Nosso Cardápio</h2>
 
-            <!-- Campo de busca -->
             <input type="text" id="busca-pizza" placeholder="Buscar por nome" oninput="buscarPizza()" />
 
-            <!-- Tabela com as pizzas -->
             <table>
                 <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Ingredientes</th>
                         <th>Preço</th>
-                        <th>Ações</th> <!-- Para editar ou remover -->
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody id="lista-pizzas">
-                    <!-- Linhas com as pizzas serão inseridas via JavaScript -->
+                    <!-- As pizzas serão carregadas dinamicamente via JavaScript -->
                 </tbody>
             </table>
 
@@ -95,13 +87,11 @@
         </div>
 
         <!-- Seção de alteração de pizzas -->
-        <div id="alterar" class="hidden"> <!-- Oculto inicialmente -->
+        <div id="alterar" class="hidden">
             <h2>Alterar Pizza</h2>
 
-            <!-- Campo para buscar pizza para edição -->
             <input type="text" id="busca-alterar-pizza" placeholder="Buscar por nome" oninput="buscarPizzaParaAlterar()" />
 
-            <!-- Formulário de edição (aparece após encontrar pizza) -->
             <div id="form-alterar-pizza" class="hidden">
                 <div class="form-group">
                     <label for="novo-nome">Novo Nome:</label>
@@ -126,16 +116,57 @@
             <button class="voltar-menu" onclick="mostrarMenu()">Voltar ao Menu</button>
         </div>
 
-        <!-- Seção de pedidos (futura implementação) -->
+        <!-- Seção de pedidos (completa e funcional) -->
         <div id="pedidos" class="hidden">
             <h2>Fazer Pedido</h2>
-            <p>Esta seção pode ser implementada com mais detalhes para gerenciar pedidos.</p>
+            
+            <div class="pedido-container">
+                <!-- Coluna 1: Lista de pizzas disponíveis -->
+                <div class="lista-pizzas">
+                    <h3>Cardápio:</h3>
+                    <div id="lista-pizzas-disponiveis">
+                        <!-- As pizzas serão carregadas dinamicamente via JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Coluna 2: Resumo do pedido e informações do cliente -->
+                <div class="resumo-pedido">
+                    <h3>Seu Pedido:</h3>
+                    <ul id="resumo-pedido">
+                        <!-- Os itens do pedido serão carregados dinamicamente -->
+                        <li class="vazio">Nenhum item adicionado</li>
+                    </ul>
+                    
+                    <div class="total-pedido">
+                        <p><strong>Total:</strong> R$ <span id="total-pedido">0.00</span></p>
+                    </div>
+                    
+                    <!-- Seção de informações do cliente -->
+                    <div class="info-cliente">
+                        <h3>Informações do Cliente</h3>
+                        <div class="form-group">
+                            <label for="nome-cliente">Nome:</label>
+                            <input type="text" id="nome-cliente" placeholder="Seu nome" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="endereco-cliente">Endereço:</label>
+                            <input type="text" id="endereco-cliente" placeholder="Seu endereço" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone-cliente">Telefone:</label>
+                            <input type="tel" id="telefone-cliente" placeholder="Seu telefone" required />
+                        </div>
+                    </div>
+                    
+                    <button onclick="finalizarPedido()" class="btn-finalizar">Finalizar Pedido</button>
+                </div>
+            </div>
+            
             <button class="voltar-menu" onclick="mostrarMenu()">Voltar ao Menu</button>
         </div>
     </div>
 
-    <!-- Script JavaScript principal -->
-    <script src="PIZZARIA.js"></script> <!-- Arquivo com as funcionalidades da página -->
+    <!-- Script JavaScript -->
+    <script src="PIZZARIA.js"></script>
 </body>
-
 </html>
