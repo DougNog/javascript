@@ -1,0 +1,41 @@
+<!--programa para apresentar comentario sobre o dispositivo que você escolher (fira cassete, DVD, CD
+ao escolher o dispositivo traga um trecho falanso sobre ele)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Selecione o dispositivo</h1>
+
+    Digite o dispositivo: <input type="text" id="dispositivo"><br>
+    <button onclick="dispositivo()">ver dispositivo</button>
+    <p id="resultado"></p>
+    <script>
+        function dispositivo() {
+            let dispositivo = document.getElementById("dispositivo").value.toLowerCase();
+            let resultado = "";
+            switch (dispositivo) {
+                case "fita cassete":
+                    resultado = "Fita que reproduz videos.";
+                    break;
+                case "dvd":
+                    resultado = "disco redondo que se pode gravar conteudos.";
+                    break;
+                case "cd":
+                    resultado = "um disco da mesma forma que o dvd porem com mais armazenamento e tecnologia .";
+                    break;
+                default:
+                    resultado = "Dispositivo inválido";
+            }
+            document.getElementById("resultado").innerHTML = `O dispositivo selecionado foi ${dispositivo} e a descrição é: ${resultado}`;
+        }
+    </script>
+    <br>
+</body>
+
+</html>
