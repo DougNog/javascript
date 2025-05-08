@@ -148,7 +148,7 @@ function registrarVenda() {
 //Relatório de vendas
 function gerarRelatorioVendas() {
   const tabelaRelatorio = document.getElementById("tabela-relatorio-vendas");
-  tabelaRelatorio.innerHTML = ""; // Limpar tabela
+  tabelaRelatorio.innerHTML = ""; 
 
   if (vendas.length === 0) {
     alert("Nenhuma venda registrada.");
