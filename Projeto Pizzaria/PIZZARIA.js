@@ -103,7 +103,7 @@ function validarCampos() {
 // ADICIONAR NOVA PIZZA
 // -------------------------------
 
-/**
+/*
  * Cadastra uma nova pizza após validação.
  */
 function adicionarPizza() {
