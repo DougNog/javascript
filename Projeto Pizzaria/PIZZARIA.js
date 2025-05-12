@@ -3,11 +3,7 @@
 // -------------------------------
 
 // Array que armazena os objetos de cada pizza cadastrada
-let pizzas = [
-  { nome: "Margherita", ingredientes: "Molho de tomate, mussarela, manjericão", preco: 45.90 },
-  { nome: "Calabresa", ingredientes: "Molho de tomate, mussarela, calabresa, cebola", preco: 52.50 },
-  { nome: "Portuguesa", ingredientes: "Molho de tomate, mussarela, presunto, ovo, cebola, azeitona", preco: 58.75 }
-];
+let pizzas = [];
 
 // -------------------------------
 // CONTROLE DO PEDIDO ATUAL
