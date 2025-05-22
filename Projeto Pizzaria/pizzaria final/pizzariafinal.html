@@ -1,69 +1,99 @@
 <!DOCTYPE html>
+<!-- Declaração do tipo de documento como HTML5 -->
 <html lang="pt-BR">
+<!-- Tag raiz do documento com definição de idioma (português do Brasil) -->
 
 <head>
+    <!-- Cabeçalho do documento - contém metadados e links para recursos externos -->
     <meta charset="UTF-8" />
+    <!-- Define a codificação de caracteres como UTF-8 (suporta caracteres especiais) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="pizzaria final.css" />
+    <!-- Configura a viewport para responsividade em dispositivos móveis -->
+    <link rel="stylesheet" href="pizzariafinal.css" />
+    <!-- Link para o arquivo CSS de estilos -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <!-- Link para o Font Awesome (biblioteca de ícones) -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" type="image/png" />
+    <!-- Define o ícone da página (favicon) -->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Importa a fonte Ubuntu do Google Fonts -->
     <title>Pizzaria</title>
+    <!-- Título da página que aparece na aba do navegador -->
 </head>
 
 <body>
+    <!-- Corpo do documento - conteúdo visível da página -->
     <div class="container">
-        <h1>Pizzaria La Bella Massa </h1>
+        <!-- Container principal que envolve todo o conteúdo -->
+        <h1>Pizzaria Senai </h1>
+        <!-- Título principal da página -->
+
         <div class="menu">
+            <!-- Menu de navegação com botões para diferentes seções -->
             <button onclick="mostrarSecao('cadastro')">
+                <!-- Botão para mostrar a seção de cadastro -->
                 <i class="fas fa-pizza-slice icon"></i>Cadastrar Pizza
+                <!-- Ícone + texto do botão -->
             </button>
 
             <button onclick="mostrarSecao('consulta')">
+                <!-- Botão para mostrar a seção de consulta -->
                 <i class="fas fa-search icon"></i>Consultar Cardápio
             </button>
 
             <button onclick="mostrarSecao('alterar')">
+                <!-- Botão para mostrar a seção de alteração -->
                 <i class="fas fa-edit icon"></i> Alterar Pizza
             </button>
 
             <button onclick="mostrarSecao('pedido')">
+                <!-- Botão para mostrar a seção de pedidos -->
                 <i class="fa-solid fa-utensils"></i> Pedido
             </button>
 
             <button onclick="mostrarSecao('venda')">
+                <!-- Botão para mostrar a seção de vendas -->
                 <i class="fas fa-shopping-cart icon"></i> Venda de Pizzas
             </button>
 
             <button onclick="gerarRelatorioVendas()">
+                <!-- Botão para gerar relatório de vendas -->
                 <i class="fa-solid fa-flag"></i> Relatório de Vendas
             </button>
         </div>
 
-        <!-- Seção de Cadastro -->
+        <!-- Seção de Cadastro (inicialmente oculta) -->
         <div id="cadastro" class="hidden">
             <h2>Cadastrar Pizza</h2>
+            <!-- Título da seção -->
             <div class="form-group">
+                <!-- Grupo de formulário para nome da pizza -->
                 <label for="titulo">Nome da Pizza:</label>
                 <input type="text" id="titulo" placeholder="Digite o nome da pizza" />
             </div>
             <div class="form-group">
+                <!-- Grupo de formulário para ingredientes -->
                 <label for="ingredientes">Ingredientes:</label>
                 <input type="text" id="ingredientes" placeholder="Digite os ingredientes" />
             </div>
             <div class="form-group">
+                <!-- Grupo de formulário para preço -->
                 <label for="preco">Preço:</label>
                 <input type="number" id="preco" placeholder="Digite o preço da pizza" />
             </div>
             <button onclick="adicionarPizza()">Adicionar Pizza</button>
+            <!-- Botão para acionar a função de adicionar pizza -->
         </div>
 
-        <!-- Seção de Consulta -->
+        <!-- Seção de Consulta (inicialmente oculta) -->
         <div id="consulta" class="hidden">
             <h2>Consultar Cardápio</h2>
             <input type="text" id="busca" placeholder="Buscar por nome" oninput="buscarPizza()" />
+            <!-- Campo de busca com evento oninput para filtrar em tempo real -->
             <table>
+                <!-- Tabela para exibir as pizzas -->
                 <thead>
+                    <!-- Cabeçalho da tabela -->
                     <tr>
                         <th>Nome</th>
                         <th>Ingredientes</th>
@@ -71,16 +101,19 @@
                     </tr>
                 </thead>
                 <tbody id="lista-pizzas">
-                    <!-- Pizzas serão exibidas aqui -->
+                    <!-- Corpo da tabela onde as pizzas serão listadas -->
+                    <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
                 </tbody>
             </table>
         </div>
 
-        <!-- Seção de Alteração -->
+        <!-- Seção de Alteração (inicialmente oculta) -->
         <div id="alterar" class="hidden">
             <h2>Alterar Pizza</h2>
             <input type="text" id="busca-alterar" placeholder="Buscar por nome" oninput="buscarPizzaParaAlterar()" />
+            <!-- Campo de busca para encontrar pizzas a alterar -->
             <div id="form-alterar" class="hidden">
+                <!-- Formulário de alteração (inicialmente oculto) -->
                 <div class="form-group">
                     <label for="novo-titulo">Novo Nome:</label>
                     <input type="text" id="novo-titulo" placeholder="Digite o novo nome" />
@@ -94,10 +127,11 @@
                     <input type="number" id="novo-preco" placeholder="Digite o novo preço" />
                 </div>
                 <button onclick="alterarPizza()">Salvar Alterações</button>
+                <!-- Botão para salvar as alterações -->
             </div>
         </div>
 
-        <!-- Seção de Venda -->
+        <!-- Seção de Venda (inicialmente oculta) -->
         <div id="venda" class="hidden">
             <h2>Venda de Pizzas</h2>
             <div class="form-group">
@@ -113,11 +147,15 @@
                 <input type="text" id="venda-comprador" placeholder="Digite o nome do cliente" />
             </div>
             <button onclick="registrarVenda()">Registrar Venda</button>
+            <!-- Botão para registrar uma venda -->
             <h3>Pizzas Vendidas</h3>
-            <ul id="lista-vendas"></ul>
+            <ul id="lista-vendas">
+                <!-- Lista não ordenada para exibir as vendas registradas -->
+                <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
+            </ul>
         </div>
 
-        <!-- Seção de Pedido -->
+        <!-- Seção de Pedido (inicialmente oculta) -->
         <div id="pedido" class="hidden">
             <h2>Pedido de Pizza</h2>
             <div class="form-group">
@@ -129,11 +167,15 @@
                 <input type="text" id="nome-cliente" placeholder="Digite o nome do cliente" />
             </div>
             <button onclick="registrarPedido()">Registrar Pedido</button>
+            <!-- Botão para registrar um pedido -->
             <h3>Pizzas Pedidas</h3>
-            <ul id="lista-pedidos"></ul>
+            <ul id="lista-pedidos">
+                <!-- Lista não ordenada para exibir os pedidos registrados -->
+                <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
+            </ul>
         </div>
 
-        <!-- Relatório -->
+        <!-- Seção de Relatório de Vendas (inicialmente oculta) -->
         <div id="relatorio-vendas" class="hidden">
             <h3>Relatório de Vendas</h3>
             <table>
@@ -145,13 +187,15 @@
                     </tr>
                 </thead>
                 <tbody id="tabela-relatorio-vendas">
-                    <!-- Vendas serão exibidas aqui -->
+                    <!-- Tabela para exibir o relatório de vendas -->
+                    <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
                 </tbody>
             </table>
         </div>
     </div>
 
-    <script src="pizzaria final.js"></script>
+    <script src="pizzaria_final.js"></script>
+    <!-- Inclusão do arquivo JavaScript com toda a lógica da aplicação -->
 </body>
 
 </html>
