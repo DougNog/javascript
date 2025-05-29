@@ -31,11 +31,11 @@ function mostrarSecao(secao) {
   document.getElementById(secao).classList.remove("hidden");
 }
 
-// ===========================
-// Cadastro de Pizza
-// ===========================
+// !===========================
+// !Cadastro de Pizza
+// !===========================
 /**
- * Função para adicionar uma nova pizza ao cardápio
+ * !Função para adicionar uma nova pizza ao cardápio
  * Valida os campos e adiciona ao array cardapio
  */
 function adicionarPizza() {
@@ -65,11 +65,11 @@ function adicionarPizza() {
   }
 }
 
-// ===========================
-// Consulta de Pizza
-// ===========================
+//!===========================
+//! Consulta de Pizza
+//! ===========================
 /**
- * Função para buscar pizzas no cardápio por nome
+ * !Função para buscar pizzas no cardápio por nome
  * Filtra as pizzas conforme o texto digitado e atualiza a exibição
  */
 function buscarPizza() {
@@ -85,11 +85,11 @@ function buscarPizza() {
   atualizarLista(resultados);
 }
 
-// ===========================
-// Busca para alteração
-// ===========================
+// !===========================
+// !Busca para alteração
+// !===========================
 /**
- * Função para encontrar uma pizza para edição
+ * !Função para encontrar uma pizza para edição
  * Preenche o formulário de edição com os dados da pizza encontrada
  */
 function buscarPizzaParaAlterar() {
@@ -117,11 +117,11 @@ function buscarPizzaParaAlterar() {
   }
 }
 
-// ===========================
-// Alterar Pizza
-// ===========================
+// !===========================
+// !Alterar Pizza
+// !===========================
 /**
- * Função para salvar as alterações feitas em uma pizza
+ * !Função para salvar as alterações feitas em uma pizza
  * Atualiza os dados da pizza no cardápio
  */
 function alterarPizza() {
@@ -155,15 +155,15 @@ function alterarPizza() {
   }
 }
 
-// ===========================
-// Atualizar tabela com pizzas
-// ===========================
+// !===========================
+// !Atualizar tabela com pizzas
+// !===========================
 /**
- * Função para atualizar a tabela que exibe as pizzas
+ * !Função para atualizar a tabela que exibe as pizzas
  * @param {Array} lista - Lista de pizzas a serem exibidas (opcional, padrão é o cardápio completo)
  */
 function atualizarLista(lista = cardapio) {
-  // Obtém a referência ao corpo da tabela
+  //Obtém a referência ao corpo da tabela
   const tabela = document.getElementById("lista-pizzas");
 
   // Limpa o conteúdo atual da tabela
@@ -187,11 +187,11 @@ function atualizarLista(lista = cardapio) {
   });
 }
 
-// ===========================
-// Registrar pedido
-// ===========================
+// !===========================
+// !Registrar pedido
+// !===========================
 /**
- * Função para registrar um novo pedido de pizza
+ * !Função para registrar um novo pedido de pizza
  * Valida os campos e adiciona à lista de pedidos
  */
 function registrarPedido() {
@@ -236,11 +236,11 @@ function registrarPedido() {
   }
 }
 
-// ===========================
-// Registrar venda
-// ===========================
+// !===========================
+// !Registrar venda
+// !===========================
 /**
- * Função para registrar uma nova venda de pizza
+ * !Função para registrar uma nova venda de pizza
  * Valida os campos, adiciona à lista de vendas e ao array vendas
  */
 function registrarVenda() {
@@ -278,9 +278,9 @@ function registrarVenda() {
   }
 }
 
-// ===========================
-// Relatório de vendas
-// ===========================
+// !===========================
+// !Relatório de vendas
+// !===========================
 /**
  * Função para gerar o relatório de vendas
  * Exibe todas as vendas registradas e calcula o total
@@ -335,9 +335,9 @@ function gerarRelatorioVendas() {
   tabelaRelatorio.appendChild(linhaTotal);
 }
 
-// ===========================
-// Funções auxiliares
-// ===========================
+// !===========================
+// !Funções auxiliares
+// !===========================
 
 /**
  * Preenche o campo de pizza no formulário de pedido e mostra a seção
