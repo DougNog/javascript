@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url('https://t4.ftcdn.net/jpg/05/99/00/79/360_F_599007953_u3IyNRlZXsZd8pMu2qSdByjDf8PcKWt7.jpg');
+    background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
