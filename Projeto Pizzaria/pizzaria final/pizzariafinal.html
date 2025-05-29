@@ -27,6 +27,7 @@
         <!-- Container principal que envolve todo o conteúdo -->
         <h1>Pizzaria Senai </h1>
         <!-- Título principal da página -->
+
         <div class="menu">
             <!-- Menu de navegação com botões para diferentes seções -->
             <button onclick="mostrarSecao('cadastro')">
@@ -61,36 +62,36 @@
             </button>
         </div>
 
-        <!-- Seção de Cadastro (inicialmente oculta) -->
+        <!-- !Seção de Cadastro (inicialmente oculta) -->
         <div id="cadastro" class="hidden">
             <h2>Cadastrar Pizza</h2>
             <!-- Título da seção -->
             <div class="form-group">
-                <!-- Grupo de formulário para nome da pizza -->
+                <!-- !Grupo de formulário para nome da pizza -->
                 <label for="titulo">Nome da Pizza:</label>
                 <input type="text" id="titulo" placeholder="Digite o nome da pizza" />
             </div>
             <div class="form-group">
-                <!-- Grupo de formulário para ingredientes -->
+                <!-- !Grupo de formulário para ingredientes -->
                 <label for="ingredientes">Ingredientes:</label>
                 <input type="text" id="ingredientes" placeholder="Digite os ingredientes" />
             </div>
             <div class="form-group">
-                <!-- Grupo de formulário para preço -->
+                <!-- !Grupo de formulário para preço -->
                 <label for="preco">Preço:</label>
                 <input type="number" id="preco" placeholder="Digite o preço da pizza" />
             </div>
             <button onclick="adicionarPizza()">Adicionar Pizza</button>
-            <!-- Botão para acionar a função de adicionar pizza -->
+            <!-- !Botão para acionar a função de adicionar pizza -->
         </div>
 
-        <!-- Seção de Consulta (inicialmente oculta) -->
+        <!-- !Seção de Consulta (inicialmente oculta) -->
         <div id="consulta" class="hidden">
             <h2>Consultar Cardápio</h2>
             <input type="text" id="busca" placeholder="Buscar por nome" oninput="buscarPizza()" />
             <!-- Campo de busca com evento oninput para filtrar em tempo real -->
             <table>
-                <!-- Tabela para exibir as pizzas -->
+                <!--Tabela para exibir as pizzas -->
                 <thead>
                     <!-- Cabeçalho da tabela -->
                     <tr>
@@ -100,13 +101,13 @@
                     </tr>
                 </thead>
                 <tbody id="lista-pizzas">
-                    <!-- Corpo da tabela onde as pizzas serão listadas -->
+                    <!-- !Corpo da tabela onde as pizzas serão listadas -->
                     <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
                 </tbody>
             </table>
         </div>
 
-        <!-- Seção de Alteração (inicialmente oculta) -->
+        <!-- !Seção de Alteração (inicialmente oculta) -->
         <div id="alterar" class="hidden">
             <h2>Alterar Pizza</h2>
             <input type="text" id="busca-alterar" placeholder="Buscar por nome" oninput="buscarPizzaParaAlterar()" />
@@ -130,7 +131,7 @@
             </div>
         </div>
 
-        <!-- Seção de Venda (inicialmente oculta) -->
+        <!-- !Seção de Venda (inicialmente oculta) -->
         <div id="venda" class="hidden">
             <h2>Venda de Pizzas</h2>
             <div class="form-group">
@@ -154,7 +155,7 @@
             </ul>
         </div>
 
-        <!-- Seção de Pedido (inicialmente oculta) -->
+        <!-- !Seção de Pedido (inicialmente oculta) -->
         <div id="pedido" class="hidden">
             <h2>Pedido de Pizza</h2>
             <div class="form-group">
@@ -174,7 +175,7 @@
             </ul>
         </div>
 
-        <!-- Seção de Relatório de Vendas (inicialmente oculta) -->
+        <!-- !Seção de Relatório de Vendas (inicialmente oculta) -->
         <div id="relatorio-vendas" class="hidden">
             <h3>Relatório de Vendas</h3>
             <table>

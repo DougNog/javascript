@@ -1,21 +1,21 @@
-// ===========================
-// Dados principais da pizzaria
-// ===========================
+// !===========================
+// !Dados principais da pizzaria
+// !===========================
 
-// Array que armazena todas as pizzas do cardápio
+// todo: Array que armazena todas as pizzas do cardápio
 let cardapio = [];
 
-// Variável para armazenar a pizza que está sendo editada no momento
+// todo: Variável para armazenar a pizza que está sendo editada no momento
 let pizzaParaAlterar = null;
 
-// Array que armazena todas as vendas realizadas
+// todo: Array que armazena todas as vendas realizadas
 let vendas = [];
 
-// ===========================
-// Mostrar seções do sistema
-// ===========================
+// !===========================
+// !Mostrar seções do sistema
+// !===========================
 /**
- * Função que controla a exibição das diferentes seções da aplicação
+ * todo: Função que controla a exibição das diferentes seções da aplicação
  * @param {string} secao - ID da seção que deve ser mostrada
  */
 function mostrarSecao(secao) {
@@ -35,11 +35,11 @@ function mostrarSecao(secao) {
 // !Cadastro de Pizza
 // !===========================
 /**
- * !Função para adicionar uma nova pizza ao cardápio
+ * todo: Função para adicionar uma nova pizza ao cardápio
  * Valida os campos e adiciona ao array cardapio
  */
 function adicionarPizza() {
-  // Obtém os valores dos campos do formulário
+  // todo: Obtém os valores dos campos do formulário
   const nome = document.getElementById("titulo").value;
   const ingredientes = document.getElementById("ingredientes").value;
   const preco = parseFloat(document.getElementById("preco").value);
@@ -69,7 +69,7 @@ function adicionarPizza() {
 //! Consulta de Pizza
 //! ===========================
 /**
- * !Função para buscar pizzas no cardápio por nome
+ * todo: Função para buscar pizzas no cardápio por nome
  * Filtra as pizzas conforme o texto digitado e atualiza a exibição
  */
 function buscarPizza() {
@@ -89,7 +89,7 @@ function buscarPizza() {
 // !Busca para alteração
 // !===========================
 /**
- * !Função para encontrar uma pizza para edição
+ * todo: Função para encontrar uma pizza para edição
  * Preenche o formulário de edição com os dados da pizza encontrada
  */
 function buscarPizzaParaAlterar() {
@@ -121,7 +121,7 @@ function buscarPizzaParaAlterar() {
 // !Alterar Pizza
 // !===========================
 /**
- * !Função para salvar as alterações feitas em uma pizza
+ * todo: Função para salvar as alterações feitas em uma pizza
  * Atualiza os dados da pizza no cardápio
  */
 function alterarPizza() {
@@ -159,7 +159,7 @@ function alterarPizza() {
 // !Atualizar tabela com pizzas
 // !===========================
 /**
- * !Função para atualizar a tabela que exibe as pizzas
+ * todo:Função para atualizar a tabela que exibe as pizzas
  * @param {Array} lista - Lista de pizzas a serem exibidas (opcional, padrão é o cardápio completo)
  */
 function atualizarLista(lista = cardapio) {
@@ -191,7 +191,7 @@ function atualizarLista(lista = cardapio) {
 // !Registrar pedido
 // !===========================
 /**
- * !Função para registrar um novo pedido de pizza
+ * todo: Função para registrar um novo pedido de pizza
  * Valida os campos e adiciona à lista de pedidos
  */
 function registrarPedido() {
@@ -240,7 +240,8 @@ function registrarPedido() {
 // !Registrar venda
 // !===========================
 /**
- * !Função para registrar uma nova venda de pizza
+ * !
+ * todo: Função para registrar uma nova venda de pizza
  * Valida os campos, adiciona à lista de vendas e ao array vendas
  */
 function registrarVenda() {
