@@ -377,24 +377,23 @@ function exibirMensagem(texto, tipo) {
 }
 
 /**
- * Valida as credenciais de login do usuário
- * (Implementação básica com usuário e senha fixos)
+ * !Valida as credenciais de login do usuário
  */
 function validarLogin() {
   // Obtém os valores dos campos
   const usuario = document.getElementById("usuario").value;
   const senha = document.getElementById("senha").value;
 
-  // Credenciais fixas (em um sistema real, isso seria verificado no servidor)
+  // !Credenciais fixas 
   const usuarioCorreto = "admin";
   const senhaCorreta = "1234";
 
-  // Verifica se as credenciais estão corretas
+  //todo: Verifica se as credenciais estão corretas
   if (usuario === usuarioCorreto && senha === senhaCorreta) {
     // Exibe mensagem de sucesso
     exibirMensagem("Login realizado com sucesso!", "sucesso");
 
-    // Redireciona para a página principal após 1 segundo
+    // todo: Redireciona para a página principal após 1 segundo
     setTimeout(() => {
       window.location.href = "pizzariafinal.html";
     }, 1000);
